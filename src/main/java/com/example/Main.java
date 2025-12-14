@@ -112,7 +112,7 @@ public class Main {
                         break;
                     case 3:
                         System.out.println("Executing: 3) Count missions for a given year...");
-                        countingMissionsForAGivenYear(connection, scanner);
+                        countingMissionsForAGivenYear(scanner);
                         break;
                     case 4:
                         System.out.println("Executing: 4) Create an account...");
@@ -205,7 +205,7 @@ public class Main {
         }
     }
 
-    private void countingMissionsForAGivenYear(Connection connection, Scanner scanner) {
+    private void countingMissionsForAGivenYear(Scanner scanner) {
         System.out.println("Enter year: ");
         if (!scanner.hasNextLine()) {
             System.out.println("Invalid year");
@@ -282,12 +282,12 @@ public class Main {
         if (!scanner.hasNextLine()) {
             return;
         }
-        String newPassword = scanner.nextLine();
+        String newPassword = scanner.nextLine().trim();
 
         try {
-            int affedtedRows = accountRepository.updatePassword(userId, newPassword);
+            int affectedRows = accountRepository.updatePassword(userId, newPassword);
 
-            if (affedtedRows > 0) {
+            if (affectedRows > 0) {
                 System.out.println("Successfully updated password for user ID: " + userId);
             } else {
                 System.out.println("Failed to update password for user ID: " + userId);

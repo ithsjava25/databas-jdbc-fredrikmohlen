@@ -8,11 +8,11 @@ public class MoonMission {
     private String missionType;
     private LocalDate launchDate;
 
-    public MoonMission(Long missionId, String spacecraft, String missionType, String launchDate) {
+    public MoonMission(Long missionId, String spacecraft, String missionType, LocalDate launchDate) {
         this.missionId = missionId;
         this.spacecraft = spacecraft;
         this.missionType = missionType;
-
+        this.launchDate = launchDate;
     }
 
     public MoonMission() {}

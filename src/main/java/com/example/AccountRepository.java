@@ -63,7 +63,7 @@ public class AccountRepository {
             return account;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Database operation failed. " + e.getMessage());
+            throw new RuntimeException("Database operation failed. " + e.getMessage(), e);
         }
     }
 
